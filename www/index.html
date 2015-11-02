@@ -1,14 +1,17 @@
 <!DOCTYPE html>
 <html lang="pt-br">
 <head>
-    <title>Google Maps</title>
+    <title>Posto APP</title>
+
+    <link rel="shortcut icon" type="image/x-icon" href="img/favicon.png" />
+
     <script src="http://code.jquery.com/jquery-2.1.4.min.js"></script>
 </head>
 <body>
 
 <!-- Cria o botão de criar mapa -->
-<button type="button" class="btn btn-block btn-large" onclick="init()">Mostrar Mapa</button>
-<input type="button" class="btn btn-block btn-large" onclick="init()" value="Mostar Mapa"> 
+<!-- <button type="button" class="btn btn-block btn-large" onclick="init()">Mostrar Mapa</button>
+<input type="button" class="btn btn-block btn-large" onclick="init()" value="Mostar Mapa"> --> 
 
 <!-- Define o tamanho do mapa -->
 <div id="map" style="width: 100%;"></div> 
@@ -20,12 +23,12 @@
     
     // Define a altura do mapa para se enquadrar com o tamanho da tela
     var altura = $(window).height();
-    $('#map').css('height',altura-40);
+    $('#map').css('height',altura-15);
 
     var map;
     var marker;
 
-    function init() {
+    // function init() {
         // Define o link do icone que será utilizado no mapa
         var image = new google.maps.MarkerImage(
             'http://www.thinkupthemes.com/wp-content/themes/alante/images/icons/color/Person-black.png',
@@ -48,7 +51,7 @@
             icon: image //Insere o icone no mapa
         });
         google.maps.event.addListener(marker,"click",showInfo);
-    }
+    // }
 
     function showInfo() {
         map.setZoom(16);
